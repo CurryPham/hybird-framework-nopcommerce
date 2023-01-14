@@ -15,4 +15,20 @@ public class PageGeneratorManager {
 	public static RegisterPageObject getRegisterPage(WebDriver driver) {
 		return new RegisterPageObject(driver);
 	}
+
+	public static CustomerInforPageObject getCustomerInforPageLink(WebDriver driver) {
+		return new CustomerInforPageObject(driver);
+	}
+
+	public static AddressPageObject getAddressPageLink(WebDriver driver) {
+		return new AddressPageObject(driver);
+	}
+
+	public static RewardPointPageObject getRewaidPointPageLink(WebDriver driver) {
+		return new RewardPointPageObject(driver);
+	}
+
+	public static MyProductReviewPageObject getMyProductReviewLink(WebDriver driver) {
+		return new MyProductReviewPageObject(driver);
+	}
 }

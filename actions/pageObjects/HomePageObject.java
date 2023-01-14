@@ -28,4 +28,9 @@ public class HomePageObject extends BasePage {
 		return PageGeneratorManager.getLoginPage(driver);
 	}
 
+	public CustomerInforPageObject clickToCustomerInforLink() {
+		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
+		return PageGeneratorManager.getCustomerInforPageLink(driver);
+	}
+
 }
