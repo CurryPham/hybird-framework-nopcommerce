@@ -2,7 +2,6 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import commons.BasePage;
 import pageObjects.HomePageObject;
 import pageObjects.RegisterPageObject;
 
@@ -16,7 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_03_Page_Object_Register extends BasePage {
+public class Level_03_Page_Object_Register {
 
 	private WebDriver driver;
 	private String firstName, lastName, passWord, emailAddress;

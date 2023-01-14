@@ -17,7 +17,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_03_Page_Object_Login extends BasePage {
+public class Level_03_Page_Object_Login {
 
 	private WebDriver driver;
 	private String firstName, lastName, password, emailAddress;
