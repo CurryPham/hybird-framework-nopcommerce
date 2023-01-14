@@ -16,7 +16,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_03_Page_Object extends BasePage {
+public class Level_03_Page_Object_Register extends BasePage {
 
 	private WebDriver driver;
 	private String firstName, lastName, passWord, emailAddress;
@@ -42,7 +42,7 @@ public class Level_03_Page_Object extends BasePage {
 	}
 
 	@Test
-	public void Register_01_Register_With_Empty_Data() {
+	public void Register_01_With_Empty_Data() {
 		System.out.println("Register_01 - Step 01: Click to Register link");
 		homePage.clickToRegisterLink();
 
@@ -58,7 +58,7 @@ public class Level_03_Page_Object extends BasePage {
 	}
 
 	@Test
-	public void Register_02_Register_With_Invalid_Email() {
+	public void Register_02_With_Invalid_Email() {
 		System.out.println("Register_02 - Step 01: Click to Register link");
 		homePage.clickToRegisterLink();
 		System.out.println("Register_02 - Step 02: Input to required fields");
@@ -75,7 +75,7 @@ public class Level_03_Page_Object extends BasePage {
 	}
 
 	@Test
-	public void Register_03_Register_With_Correct_Email() {
+	public void Register_03_With_Correct_Email() {
 		System.out.println("Register_03 - Step 01: Click to Register link");
 		homePage.clickToRegisterLink();
 
@@ -94,7 +94,7 @@ public class Level_03_Page_Object extends BasePage {
 	}
 
 	@Test
-	public void Register_04_Register_With_Email_Exist() {
+	public void Register_04_With_Email_Exist() {
 		System.out.println("Register_04 - Step 01: Click to Register link");
 		homePage.clickToRegisterLink();
 
@@ -113,7 +113,7 @@ public class Level_03_Page_Object extends BasePage {
 	}
 
 	@Test
-	public void Register_05_Register_With_Password_Less_Than_6_Character() {
+	public void Register_05_With_Password_Less_Than_6_Character() {
 		System.out.println("Register_05 - Step 01: Click to Register link");
 		homePage.clickToRegisterLink();
 
@@ -132,7 +132,7 @@ public class Level_03_Page_Object extends BasePage {
 	}
 
 	@Test
-	public void Register_06_Register_With_Invalid_Confirm_Password() {
+	public void Register_06_With_Invalid_Confirm_Password() {
 		System.out.println("Register_06 - Step 01: Click to Register link");
 		homePage.clickToRegisterLink();
 

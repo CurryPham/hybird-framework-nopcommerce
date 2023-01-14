@@ -1,9 +1,5 @@
 package pageUls;
 
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.AfterClass;
-
 public class RegisterPageUI {
 	public static final String FIRST_NAME_TEXTBOX = "//input[@id='FirstName']";
 	public static final String LAST_NAME_TEXTBOX = "//input[@id='LastName']";

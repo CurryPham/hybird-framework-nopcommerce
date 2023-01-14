@@ -1,10 +1,6 @@
 package pageObjects;
 
-import java.util.Random;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.server.handler.GetElementText;
-
 import commons.BasePage;
 import pageUls.RegisterPageUI;
 
