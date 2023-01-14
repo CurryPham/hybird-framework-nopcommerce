@@ -12,9 +12,10 @@ public class RegisterPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public void clickToRegisterButton() {
+	public HomePageObject clickToRegisterButton() {
 		waitForElementClickable(driver, RegisterPageUI.REGISTER_LINK);
 		clickToElement(driver, RegisterPageUI.REGISTER_LINK);
+		return PageGeneratorManager.getHomePage(driver);
 	}
 
 	public void inputToFirstnameTextBox(String firstName) {
