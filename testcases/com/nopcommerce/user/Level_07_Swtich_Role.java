@@ -27,7 +27,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_06_Swtich_Role extends BaseTest {
+public class Level_07_Swtich_Role extends BaseTest {
 
 	@Parameters("browser")
 	@BeforeClass
