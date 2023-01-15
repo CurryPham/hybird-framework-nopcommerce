@@ -1,5 +1,5 @@
 package pageUIs.nopCommerce.admin;
 
 public class AdminDashboardPageUI {
-	public static final String DASHBOARD_HEADER = "//p[contains(text(),' Dashboard')]";
+	public static final String DASHBOARD_HEADER = "xpath=//p[contains(text(),' Dashboard')]";
 }
