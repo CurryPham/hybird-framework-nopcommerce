@@ -1,4 +1,4 @@
-package pageUls;
+package pageUls.nopCommerce.user;
 
 public class LoginPageUI {
 	public static final String EMAIL_TEXTBOX = "//input[@id='Email']";

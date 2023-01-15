@@ -4,9 +4,9 @@ import org.testng.annotations.Test;
 
 import commons.BasePage;
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.user.nopCommerce.UserHomePageObject;
+import pageObjects.user.nopCommerce.UserLoginPageObject;
+import pageObjects.user.nopCommerce.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -23,9 +23,9 @@ public class Level_05_Generator_Manager_I extends BaseTest {
 
 	private WebDriver driver;
 	private String firstName, lastName, password, emailAddress;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -38,16 +38,12 @@ public class Level_05_Generator_Manager_I extends BaseTest {
 		emailAddress = "curry" + generateFakeNumber() + "@gmail.com";
 		password = "123456";
 
-		homePage = new HomePageObject(driver);
-
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
-		driver.manage().window().maximize();
-		driver.get("https://demo.nopcommerce.com");
+		homePage = new UserHomePageObject(driver);
 
 		System.out.println("Pre_Conditon - Step 01: Click to Register link");
-		homePage.clickToRegisterLink();
+		homePage.clickToRegister();
 
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		System.out.println("Pre_Conditon - Step 02: Input to required fields");
 		registerPage.inputToFirstnameTextBox(firstName);
@@ -61,16 +57,16 @@ public class Level_05_Generator_Manager_I extends BaseTest {
 
 		System.out.println("Pre_Conditon - Step 04: Verify success message displayed");
 		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 
 	}
 
 	@Test
 	public void Login_01_With_Empty_Data() {
 		System.out.println("Login_01 - Step 1: Click to Login link");
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 
 		System.out.println("Login_01 - Step 2: Click to Login button");
 		loginPage.clickToLoginButton();
@@ -84,7 +80,7 @@ public class Level_05_Generator_Manager_I extends BaseTest {
 		System.out.println("Login_02 - Step 1: Click to Login link");
 		loginPage.clickToLoginLink();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 
 		System.out.println("Login_02 - Step 2: Input invalid Email");
 		loginPage.inputToEmailTextbox("fewfwfwfwf");
@@ -101,7 +97,7 @@ public class Level_05_Generator_Manager_I extends BaseTest {
 		System.out.println("Login_03 - Step 1: Click to Login link");
 		loginPage.clickToLoginLink();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 
 		System.out.println("Login_03 - Step 2: Input  non register Email");
 		loginPage.inputToEmailTextbox(emailAddress);
@@ -118,7 +114,7 @@ public class Level_05_Generator_Manager_I extends BaseTest {
 		System.out.println("Login_04 - Step 1: Click to Login link");
 		loginPage.clickToLoginLink();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 
 		System.out.println("Login_04 - Step 2: Input Email");
 		loginPage.inputToEmailTextbox(emailAddress);
@@ -135,7 +131,7 @@ public class Level_05_Generator_Manager_I extends BaseTest {
 		System.out.println("Login_05 - Step 1: Click to Login link");
 		loginPage.clickToLoginLink();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 
 		System.out.println("Login_05 - Step 2: Input Email");
 		loginPage.inputToEmailTextbox(emailAddress);
@@ -155,7 +151,7 @@ public class Level_05_Generator_Manager_I extends BaseTest {
 		System.out.println("Login_06 - Step 1: Click to Login link");
 		loginPage.clickToLoginLink();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 
 		System.out.println("Login_06 - Step 2: Input Email");
 		loginPage.inputToEmailTextbox(emailAddress);
@@ -166,7 +162,7 @@ public class Level_05_Generator_Manager_I extends BaseTest {
 		System.out.println("Login_06 - Step 4: Click to Login button");
 		loginPage.clickToLoginButton();
 
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 
 		System.out.println("Login_06 - Step 5: Verify error wrong Password message");
 		Assert.assertEquals(homePage.getSuccessLogin(), "My account");

@@ -3,9 +3,9 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.user.nopCommerce.UserHomePageObject;
+import pageObjects.user.nopCommerce.UserLoginPageObject;
+import pageObjects.user.nopCommerce.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 
@@ -21,9 +21,9 @@ public class Level_03_Page_Object_Login {
 
 	private WebDriver driver;
 	private String firstName, lastName, password, emailAddress;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
 	private String projectPath = System.getProperty("user.dir");
 
 	@BeforeClass
@@ -35,16 +35,16 @@ public class Level_03_Page_Object_Login {
 		emailAddress = "curry" + generateFakeNumber() + "@gmail.com";
 		password = "123456";
 
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
-		loginPage = new LoginPageObject(driver);
+		homePage = new UserHomePageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com");
 
 		System.out.println("Pre_Conditon - Step 01: Click to Register link");
-		homePage.clickToRegisterLink();
+		homePage.clickToRegister();
 
 		System.out.println("Pre_Conditon - Step 02: Input to required fields");
 		registerPage.inputToFirstnameTextBox(firstName);
@@ -63,7 +63,7 @@ public class Level_03_Page_Object_Login {
 	@Test
 	public void Login_01_With_Empty_Data() {
 		System.out.println("Login_01 - Step 1: Click to Login link");
-		homePage.clickToLoginLink();
+		homePage.openLoginPage();
 
 		System.out.println("Login_01 - Step 2: Click to Login button");
 		loginPage.clickToLoginButton();

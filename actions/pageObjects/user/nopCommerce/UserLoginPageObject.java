@@ -1,20 +1,20 @@
-package pageObjects;
+package pageObjects.user.nopCommerce;
 
 import org.openqa.selenium.WebDriver;
 import commons.BasePage;
-import pageUls.LoginPageUI;
+import pageUls.nopCommerce.user.LoginPageUI;
 
-public class LoginPageObject extends BasePage {
+public class UserLoginPageObject extends BasePage {
 	WebDriver driver;
 
-	public LoginPageObject(WebDriver driver) {
+	public UserLoginPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	public LoginPageObject clickToLoginLink() {
+	public UserLoginPageObject clickToLoginLink() {
 		waitForElementClickable(driver, LoginPageUI.LOGIN_LINK);
 		clickToElement(driver, LoginPageUI.LOGIN_LINK);
-		return new LoginPageObject(driver);
+		return new UserLoginPageObject(driver);
 	}
 
 	public String getIncorrectMessage() {
@@ -33,16 +33,23 @@ public class LoginPageObject extends BasePage {
 
 	}
 
-	public HomePageObject clickToLoginButton() {
+	public UserHomePageObject clickToLoginButton() {
 		waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-		return new HomePageObject(driver);
+		return new UserHomePageObject(driver);
 
 	}
 
 	public void inputToPasswordTextbox(String passWord) {
 		waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, passWord);
+
+	}
+
+	public UserHomePageObject loginAsUser(String emailAdreess, String passWord) {
+		inputToEmailTextbox(emailAdreess);
+		inputToPasswordTextbox(passWord);
+		return clickToLoginButton();
 
 	}
 

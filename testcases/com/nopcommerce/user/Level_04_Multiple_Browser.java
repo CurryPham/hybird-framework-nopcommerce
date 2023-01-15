@@ -3,8 +3,8 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.user.nopCommerce.UserHomePageObject;
+import pageObjects.user.nopCommerce.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -20,8 +20,8 @@ public class Level_04_Multiple_Browser extends BaseTest {
 
 	private WebDriver driver;
 	private String firstName, lastName, passWord, emailAddress;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -36,15 +36,15 @@ public class Level_04_Multiple_Browser extends BaseTest {
 				generateFakeNumber() + "@gmail.com";
 		passWord = "123456";
 
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		homePage = new UserHomePageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 	}
 
 	@Test
 	public void Register_01_With_Empty_Data() {
 		System.out.println("Register_01 - Step 01: Click to Register link");
-		homePage.clickToRegisterLink();
+		homePage.clickToRegister();
 
 		System.out.println("Register_01e - Step 02: Click to Register button");
 		registerPage.clickToRegisterButton();
@@ -60,7 +60,7 @@ public class Level_04_Multiple_Browser extends BaseTest {
 	@Test
 	public void Register_02_With_Invalid_Email() {
 		System.out.println("Register_02 - Step 01: Click to Register link");
-		homePage.clickToRegisterLink();
+		homePage.clickToRegister();
 
 		System.out.println("Register_02 - Step 02: Input to required fields");
 		registerPage.inputToFirstnameTextBox(firstName);

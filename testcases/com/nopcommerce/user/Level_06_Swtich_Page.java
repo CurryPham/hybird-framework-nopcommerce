@@ -4,14 +4,14 @@ import org.testng.annotations.Test;
 
 import commons.BasePage;
 import commons.BaseTest;
-import pageObjects.AddressPageObject;
-import pageObjects.CustomerInforPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyProductReviewPageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
-import pageObjects.RewardPointPageObject;
+import commons.PageGeneratorManager;
+import pageObjects.user.nopCommerce.UserAddressPageObject;
+import pageObjects.user.nopCommerce.UserCustomerInforPageObject;
+import pageObjects.user.nopCommerce.UserHomePageObject;
+import pageObjects.user.nopCommerce.UserLoginPageObject;
+import pageObjects.user.nopCommerce.UserMyProductReviewPageObject;
+import pageObjects.user.nopCommerce.UserRegisterPageObject;
+import pageObjects.user.nopCommerce.UserRewardPointPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -37,14 +37,10 @@ public class Level_06_Swtich_Page extends BaseTest {
 		emailAddress = "curry" + generateFakeNumber() + "@gmail.com";
 		password = "123456";
 
-		homePage = PageGeneratorManager.getHomePage(driver);
-
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
-		driver.manage().window().maximize();
-		driver.get("https://demo.nopcommerce.com");
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 
 		System.out.println("Pre_Conditon - Step 01: Click to Register link");
-		registerPage = homePage.clickToRegisterLink();
+		registerPage = homePage.clickToRegister();
 
 		System.out.println("Pre_Conditon - Step 02: Input to required fields");
 		registerPage.inputToFirstnameTextBox(firstName);
@@ -63,7 +59,7 @@ public class Level_06_Swtich_Page extends BaseTest {
 	@Test
 	public void User_01_With_Email_Register_And_Correct_Password() {
 		System.out.println("User_01 - Step 1: Click to Login link");
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 
 		System.out.println("User_01 - Step 2: Input Email");
 		loginPage.inputToEmailTextbox(emailAddress);
@@ -78,7 +74,7 @@ public class Level_06_Swtich_Page extends BaseTest {
 		Assert.assertEquals(homePage.getSuccessLogin(), "My account");
 
 		System.out.println("User_01 - Step 6: Click to Login button");
-		customerInforPage = homePage.clickToCustomerInforLink();
+		customerInforPage = homePage.clickToCustomerInfor();
 	}
 
 	@Test
@@ -105,12 +101,12 @@ public class Level_06_Swtich_Page extends BaseTest {
 
 	private WebDriver driver;
 	private String firstName, lastName, password, emailAddress;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
-	private CustomerInforPageObject customerInforPage;
-	private AddressPageObject addressPage;
-	private MyProductReviewPageObject myProductReviewPage;
-	private RewardPointPageObject rewardPointPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
+	private UserCustomerInforPageObject customerInforPage;
+	private UserAddressPageObject addressPage;
+	private UserMyProductReviewPageObject myProductReviewPage;
+	private UserRewardPointPageObject rewardPointPage;
 
 }
