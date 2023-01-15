@@ -110,19 +110,19 @@ public class Level_09_Dynamic_Locator extends BaseTest {
 	@Test
 	public void User_03_Dynamic_Page_02() {
 
-		customerInforPage.openPagesAtMyAccountByName(driver, "Reward points");
+		customerInforPage.openPagesAtMyAccountByPageName(driver, "Reward points");
 		rewardPointPage = PageGeneratorManager.getUserRewaidPointPage(driver);
 
-		rewardPointPage.openPagesAtMyAccountByName(driver, "Addresses");
+		rewardPointPage.openPagesAtMyAccountByPageName(driver, "Addresses");
 		addressPage = PageGeneratorManager.getUserAddressPage(driver);
 
-		addressPage.openPagesAtMyAccountByName(driver, "Reward points");
+		addressPage.openPagesAtMyAccountByPageName(driver, "Reward points");
 		rewardPointPage = PageGeneratorManager.getUserRewaidPointPage(driver);
 
-		rewardPointPage.openPagesAtMyAccountByName(driver, "My product reviews");
+		rewardPointPage.openPagesAtMyAccountByPageName(driver, "My product reviews");
 		myProductReviewPage = PageGeneratorManager.getUserMyProductReview(driver);
 
-		myProductReviewPage.openPagesAtMyAccountByName(driver, "Customer info");
+		myProductReviewPage.openPagesAtMyAccountByPageName(driver, "Customer info");
 		customerInforPage = PageGeneratorManager.getUserCustomerInforPage(driver);
 
 	}
