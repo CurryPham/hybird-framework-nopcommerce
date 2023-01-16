@@ -5,8 +5,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -16,25 +18,101 @@ public class BaseTest {
 	private WebDriver driver;
 
 	protected WebDriver getBrowserDriver(String browserName) {
-		if (browserName.equals("firefox")) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		if (browserList == BrowserList.FIREFOX) {
 			// WebDriverManager.firefoxdriver().driverVersion("").setup();
 			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
-		} else if (browserName.equals("chrome")) {
+		} else if (browserList == BrowserList.HEAD_FIREFOX) {
+			WebDriverManager.chromedriver().setup();
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments("--headless");
+			options.addArguments("window-size=1920x1080");
+			driver = new FirefoxDriver(options);
+		} else if (browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-		} else if (browserName.equals("edge")) {
+		} else if (browserList == BrowserList.HEAD_CHOME) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless");
+			options.addArguments("window-size=1920x1080");
+			driver = new ChromeDriver(options);
+		} else if (browserList == BrowserList.EDGE) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		} else {
 			throw new RuntimeException("Please Import Browser Driver");
 		}
 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.MILLISECONDS);
+		this.driver.manage().timeouts().implicitlyWait(20, TimeUnit.MILLISECONDS);
 		driver.manage().window().maximize();
-		driver.get("https://demo.nopcommerce.com");
+		driver.get(GlobalConstants.USER_PAGE_URL);
 		return this.driver;
+	}
 
+	protected WebDriver getBrowserDriver(String browserName, String severName) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		if (browserList == BrowserList.FIREFOX) {
+			// WebDriverManager.firefoxdriver().driverVersion("").setup();
+			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+			driver = new FirefoxDriver();
+		} else if (browserList == BrowserList.HEAD_FIREFOX) {
+			WebDriverManager.chromedriver().setup();
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments("--headless");
+			options.addArguments("window-size=1920x1080");
+			driver = new FirefoxDriver(options);
+		} else if (browserList == BrowserList.CHROME) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		} else if (browserList == BrowserList.HEAD_CHOME) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless");
+			options.addArguments("window-size=1920x1080");
+			driver = new ChromeDriver(options);
+		} else if (browserList == BrowserList.EDGE) {
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+		} else {
+			throw new RuntimeException("Please Import Browser Driver");
+		}
+
+		this.driver.manage().timeouts().implicitlyWait(20, TimeUnit.MILLISECONDS);
+		driver.manage().window().maximize();
+		driver.get(getEnviromentValue(severName));
+		return this.driver;
+	}
+
+	private String getEnviromentUrl(String enviromentName) {
+		String url = null;
+		switch (enviromentName) {
+		case "DEV":
+			url = GlobalConstants.USER_PAGE_URL;
+			break;
+		case "TEST":
+			url = GlobalConstants.ADMIN_PAGE_URL;
+			break;
+		}
+		return url;
+	}
+
+	private String getEnviromentValue(String severName) {
+		String envUrl = null;
+		EnviromentList enviroment = EnviromentList.valueOf(severName.toUpperCase());
+		if (enviroment == EnviromentList.DEV) {
+			envUrl = "https://demo.nopcommerce.com/";
+		} else if (enviroment == EnviromentList.TESTING) {
+			envUrl = "https://admin-demo.nopcommerce.com";
+
+		} else if (enviroment == EnviromentList.STAGING) {
+			envUrl = "https://staging..nopcommerce.com";
+
+		} else if (enviroment == EnviromentList.PRODUCTION) {
+			envUrl = "https://production.nopcommerce.com";
+		}
+		return envUrl;
 	}
 
 	protected int generateFakeNumber() {

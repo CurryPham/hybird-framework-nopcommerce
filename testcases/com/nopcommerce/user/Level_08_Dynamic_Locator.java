@@ -24,7 +24,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_09_Dynamic_Locator extends BaseTest {
+public class Level_08_Dynamic_Locator extends BaseTest {
 
 	@Parameters("browser")
 	@BeforeClass
