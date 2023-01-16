@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 
-	private String projectPath = System.getProperty("user.dir");
+	private String projectPath = GlobalConstants.PROJECT_PATH;
 	private WebDriver driver;
 
 	protected WebDriver getBrowserDriver(String browserName) {
@@ -45,7 +45,7 @@ public class BaseTest {
 			throw new RuntimeException("Please Import Browser Driver");
 		}
 
-		this.driver.manage().timeouts().implicitlyWait(20, TimeUnit.MILLISECONDS);
+		this.driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.MILLISECONDS);
 		driver.manage().window().maximize();
 		driver.get(GlobalConstants.USER_PAGE_URL);
 		return this.driver;
@@ -79,7 +79,7 @@ public class BaseTest {
 			throw new RuntimeException("Please Import Browser Driver");
 		}
 
-		this.driver.manage().timeouts().implicitlyWait(20, TimeUnit.MILLISECONDS);
+		this.driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.MILLISECONDS);
 		driver.manage().window().maximize();
 		driver.get(getEnviromentValue(severName));
 		return this.driver;
