@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.server.handler.GetElementLocationInView;
 
 import commons.BasePage;
-import pageUIs.JQuery.HomePageUI;
+import pageUIs.JQuery.dataTable.HomePageUI;
 
 public class HomePageObject extends BasePage {
 	private WebDriver driver;
@@ -94,4 +94,5 @@ public class HomePageObject extends BasePage {
 		waitForElementClickable(driver, HomePageUI.ICON_NAME_BY_ROW, rowNumber, iconName);
 		clickToElement(driver, HomePageUI.ICON_NAME_BY_ROW, rowNumber, iconName);
 	}
+
 }

@@ -22,6 +22,7 @@ import pageObjects.user.nopCommerce.UserCustomerInforPageObject;
 import pageObjects.user.nopCommerce.UserHomePageObject;
 import pageObjects.user.nopCommerce.UserMyProductReviewPageObject;
 import pageObjects.user.nopCommerce.UserRewardPointPageObject;
+import pageUIs.JQuery.uploadFile.BasePageJQueryUI;
 import pageUls.nopCommerce.user.BasePageUI;
 
 public class BasePage {
@@ -398,11 +399,25 @@ public class BasePage {
 	public boolean isImageLoaded(WebDriver driver, String locatorType) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", getWebElement(driver, locatorType));
-		if (status) {
-			return true;
-		} else {
-			return false;
+		return status;
+	}
+
+	public boolean isImageLoaded(WebDriver driver, String locatorType, String... dynamicValues) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
+				getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
+		return status;
+	}
+
+	public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
+		String filePath = GlobalConstants.UPLOAD_FILE;
+		String fullFileName = "";
+
+		for (String file : fileNames) {
+			fullFileName = fullFileName + filePath + file + "\n";
 		}
+		fullFileName = fullFileName.trim();
+		getWebElement(driver, BasePageJQueryUI.UPLOAD_FILE).sendKeys(fullFileName);
 	}
 
 	public void waitForElementVisible(WebDriver driver, String locatorType) {
