@@ -1,0 +1,84 @@
+[INFO ] [2023-01-17 20:49:27,972] Register - Step 01: Navigate to 'Register page'
+[INFO ] [2023-01-17 20:49:29,276] Register - Step 02: Enter to First Name textbox with value is 'curry'
+[INFO ] [2023-01-17 20:49:29,353] Register - Step 03: Enter to Last name textbox with value is 'pham'
+[INFO ] [2023-01-17 20:49:29,434] Register - Step 04: Enter to Email Address textbox with value is 'curry1466@gmail.com'
+[INFO ] [2023-01-17 20:49:29,522] Register - Step 05: Enter to Password textbox with value is '123456'
+[INFO ] [2023-01-17 20:49:29,606] Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[INFO ] [2023-01-17 20:49:29,694] Register - Step 07: Click to Register button
+[INFO ] [2023-01-17 20:49:30,791] Register - Step 08: Verify register success mesage is displayed
+[INFO ] [2023-01-17 20:49:30,841] Register - Step 01: Navigate to 'Home page'
+[INFO ] [2023-01-17 20:49:31,500] Register - Step 02: Enter to  Email Address textbox with value is 'curry1466@gmail.com'
+[INFO ] [2023-01-17 20:49:31,584] Register - Step 03: Enter to Password textbox with value is '123456'
+[INFO ] [2023-01-17 20:49:31,661] Register - Step 04: Click to Login button
+[INFO ] [2023-01-17 20:49:32,670] Register - Step 05: Verify login success mesage is displayed
+[INFO ] [2023-01-17 20:49:32,720] Register - Step 06: Navigate to 'Customer infor page'
+[2023-01-17 20:50:10,496] Register - Step 01: Navigate to 'Register page'
+[2023-01-17 20:50:11,786] Register - Step 02: Enter to First Name textbox with value is 'curry'
+[2023-01-17 20:50:11,880] Register - Step 03: Enter to Last name textbox with value is 'pham'
+[2023-01-17 20:50:11,956] Register - Step 04: Enter to Email Address textbox with value is 'curry3767@gmail.com'
+[2023-01-17 20:50:12,043] Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-01-17 20:50:12,125] Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-01-17 20:50:12,203] Register - Step 07: Click to Register button
+[2023-01-17 20:50:13,077] Register - Step 08: Verify register success mesage is displayed
+[2023-01-17 20:50:13,137] Register - Step 01: Navigate to 'Home page'
+[2023-01-17 20:50:13,571] Register - Step 02: Enter to  Email Address textbox with value is 'curry3767@gmail.com'
+[2023-01-17 20:50:13,659] Register - Step 03: Enter to Password textbox with value is '123456'
+[2023-01-17 20:50:13,738] Register - Step 04: Click to Login button
+[2023-01-17 20:50:14,545] Register - Step 05: Verify login success mesage is displayed
+[2023-01-17 20:50:14,615] Register - Step 06: Navigate to 'Customer infor page'
+[2023-01-17 21:07:30,852] Register - Step 01: Navigate to 'Register page'
+[2023-01-17 21:07:32,116] Register - Step 02: Enter to First Name textbox with value is 'curry'
+[2023-01-17 21:07:32,195] Register - Step 03: Enter to Last name textbox with value is 'pham'
+[2023-01-17 21:07:32,273] Register - Step 04: Enter to Email Address textbox with value is 'curry4951@gmail.com'
+[2023-01-17 21:07:32,353] Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-01-17 21:07:32,438] Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-01-17 21:07:32,515] Register - Step 07: Click to Register button
+[2023-01-17 21:07:33,557] Register - Step 08: Verify register success mesage is displayed
+[2023-01-17 21:07:33,606] Register - Step 01: Navigate to 'Home page'
+[2023-01-17 21:07:34,118] Register - Step 02: Enter to  Email Address textbox with value is 'curry4951@gmail.com'
+[2023-01-17 21:07:34,245] Register - Step 03: Enter to Password textbox with value is '123456'
+[2023-01-17 21:07:34,368] Register - Step 04: Click to Login button
+[2023-01-17 21:07:35,407] Register - Step 05: Verify login success mesage is displayed
+[2023-01-17 21:07:35,458] Register - Step 06: Navigate to 'Customer infor page'
+[2023-01-17 21:10:13,026] Register - Step 01: Navigate to 'Register page'
+[2023-01-17 21:10:14,308] Register - Step 02: Enter to First Name textbox with value is 'curry'
+[2023-01-17 21:10:14,389] Register - Step 03: Enter to Last name textbox with value is 'pham'
+[2023-01-17 21:10:14,466] Register - Step 04: Enter to Email Address textbox with value is 'curry8870@gmail.com'
+[2023-01-17 21:10:14,547] Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-01-17 21:10:14,637] Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-01-17 21:10:14,713] Register - Step 07: Click to Register button
+[2023-01-17 21:10:15,722] Register - Step 08: Verify register success mesage is displayed
+[2023-01-17 21:10:15,771] Register - Step 01: Navigate to 'Home page'
+[2023-01-17 21:10:16,389] Register - Step 02: Enter to  Email Address textbox with value is 'curry8870@gmail.com'
+[2023-01-17 21:10:16,476] Register - Step 03: Enter to Password textbox with value is '123456'
+[2023-01-17 21:10:16,564] Register - Step 04: Click to Login button
+[2023-01-17 21:10:17,503] Register - Step 05: Verify login success mesage is displayed
+[2023-01-17 21:10:17,571] Register - Step 06: Navigate to 'Customer infor page'
+[2023-01-17 21:18:14,158] Register - Step 01: Navigate to 'Register page'
+[2023-01-17 21:18:15,327] Register - Step 02: Enter to First Name textbox with value is 'curry'
+[2023-01-17 21:18:15,415] Register - Step 03: Enter to Last name textbox with value is 'pham'
+[2023-01-17 21:18:15,496] Register - Step 04: Enter to Email Address textbox with value is 'curry4517@gmail.com'
+[2023-01-17 21:18:15,590] Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-01-17 21:18:15,675] Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-01-17 21:18:15,755] Register - Step 07: Click to Register button
+[2023-01-17 21:18:16,511] Register - Step 08: Verify register success mesage is displayed
+[2023-01-17 21:18:16,561] Register - Step 01: Navigate to 'Home page'
+[2023-01-17 21:18:16,956] Register - Step 02: Enter to  Email Address textbox with value is 'curry4517@gmail.com'
+[2023-01-17 21:18:17,051] Register - Step 03: Enter to Password textbox with value is '123456'
+[2023-01-17 21:18:17,129] Register - Step 04: Click to Login button
+[2023-01-17 21:18:17,848] Register - Step 05: Verify login success mesage is displayed
+[2023-01-17 21:18:17,896] Register - Step 06: Navigate to 'Customer infor page'
+[2023-01-17 21:18:23,335] Register - Step 01: Navigate to 'Register page'
+[2023-01-17 21:18:24,505] Register - Step 02: Enter to First Name textbox with value is 'curry'
+[2023-01-17 21:18:24,607] Register - Step 03: Enter to Last name textbox with value is 'pham'
+[2023-01-17 21:18:24,688] Register - Step 04: Enter to Email Address textbox with value is 'curry8171@gmail.com'
+[2023-01-17 21:18:24,773] Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-01-17 21:18:24,856] Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-01-17 21:18:24,936] Register - Step 07: Click to Register button
+[2023-01-17 21:18:25,682] Register - Step 08: Verify register success mesage is displayed
+[2023-01-17 21:18:25,736] Register - Step 01: Navigate to 'Home page'
+[2023-01-17 21:18:26,133] Register - Step 02: Enter to  Email Address textbox with value is 'curry8171@gmail.com'
+[2023-01-17 21:18:26,213] Register - Step 03: Enter to Password textbox with value is '123456'
+[2023-01-17 21:18:26,288] Register - Step 04: Click to Login button
+[2023-01-17 21:18:26,990] Register - Step 05: Verify login success mesage is displayed
+[2023-01-17 21:18:27,044] Register - Step 06: Navigate to 'Customer infor page'
