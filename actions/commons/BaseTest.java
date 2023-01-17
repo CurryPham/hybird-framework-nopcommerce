@@ -115,6 +115,14 @@ public class BaseTest {
 		return envUrl;
 	}
 
+	public void sleepInSecond(long timeinsecond) {
+		try {
+			Thread.sleep(timeinsecond * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
 	protected int generateFakeNumber() {
 		Random rand = new Random();
 		return rand.nextInt(9999);
