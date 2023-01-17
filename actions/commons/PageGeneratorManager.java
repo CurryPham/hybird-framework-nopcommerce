@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import pageObjects.admin.nopCommerce.AdminDashboardPageObject;
 import pageObjects.admin.nopCommerce.AdminPageObject;
+import pageObjects.facebook.LoginPageObject;
 import pageObjects.user.nopCommerce.UserAddressPageObject;
 import pageObjects.user.nopCommerce.UserCustomerInforPageObject;
 import pageObjects.user.nopCommerce.UserHomePageObject;
@@ -49,4 +50,9 @@ public class PageGeneratorManager {
 	public static AdminDashboardPageObject getAdminDashboardPage(WebDriver driver) {
 		return new AdminDashboardPageObject(driver);
 	}
+
+	public static LoginPageObject getLoginPage(WebDriver driver) {
+		return new LoginPageObject(driver);
+	}
+
 }

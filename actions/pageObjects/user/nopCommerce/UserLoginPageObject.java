@@ -53,4 +53,9 @@ public class UserLoginPageObject extends BasePage {
 
 	}
 
+	public boolean isConfirmEmailAddressTextboxUndisplayed() {
+		waitForElementInUndisplayed(driver, getErrorMessage());
+		return false;
+	}
+
 }
