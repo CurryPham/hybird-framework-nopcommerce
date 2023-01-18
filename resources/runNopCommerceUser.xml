@@ -14,8 +14,8 @@
 f  <test name="Run on Firefox">
   <parameter name = "browser" value = "firefox"/>
     <classes>
-      <class name="com.nopcommerce.common.Common_01_Register_Cookie"/>
-      <class name="com.nopcommerce.user.Level_16_Share_Data_C"/>
+   
+      <class name="com.nopcommerce.user.Level_17_Custom_Close_Window"/>
     </classes>
   </test> 
  
