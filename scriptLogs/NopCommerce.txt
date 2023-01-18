@@ -1,15 +1,20 @@
-[2023-01-18 14:03:34,674] Pre_Condition - Step 01: Navigate to 'Register page'
-[2023-01-18 14:03:35,409] Pre_Condition - Step 02: Enter to First Name textbox with value is 'curry'
-[2023-01-18 14:03:35,514] Pre_Condition - Step 03: Enter to Last name textbox with value is 'pham'
-[2023-01-18 14:03:35,589] Pre_Condition - Step 04: Enter to Email Address textbox with value is 'curry9700@gmail.com'
-[2023-01-18 14:03:35,675] Pre_Condition - Step 05: Enter to Password textbox with value is '123456'
-[2023-01-18 14:03:35,760] Pre_Condition - Step 06: Enter to Confirm Password textbox with value is '123456'
-[2023-01-18 14:03:35,852] Pre_Condition - Step 07: Click to Register button
-[2023-01-18 14:03:36,592] Pre_Condition - Step 08: Verify register success mesage is displayed
-[2023-01-18 14:03:36,648] Pre_Condition - Step 09: Navigate to 'Home page'
-[2023-01-18 14:03:37,030] Pre_Condition - Step 10: Enter to  Email Address textbox with value is 'curry9700@gmail.com'
-[2023-01-18 14:03:37,124] Pre_Condition - Step 11: Enter to Password textbox with value is '123456'
-[2023-01-18 14:03:37,201] Pre_Condition - Step 12: Click to Login button
-[2023-01-18 14:03:37,972] Pre_Condition - Step 13: Verify login success mesage is displayed
-[2023-01-18 14:03:38,159] OS name = os.name
-[2023-01-18 14:03:38,159] Driver instance name = firefoxdriver: firefox on windows (69349ea2-6b11-4a21-828a-48da3d051c09)
+[2023-01-18 16:40:29,336] Register - Step 01: Navigate to 'Register page'
+[2023-01-18 16:40:30,669] Register - Step 02: Enter to First Name textbox with value is 'curry'
+[2023-01-18 16:40:30,754] Register - Step 03: Enter to Last name textbox with value is 'pham'
+[2023-01-18 16:40:31,776] Register - Step 04: Enter to Email Address textbox with value is 'curry3462@gmail.com'
+[2023-01-18 16:40:31,944] Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-01-18 16:40:32,028] Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-01-18 16:40:32,122] Register - Step 07: Click to Register button
+[2023-01-18 16:40:32,897] Register - Step 08: Verify register success mesage is displayed
+[2023-01-18 16:40:33,010] Login - Step 01: Navigate to 'Home page'
+[2023-01-18 16:40:33,387] Login - Step 02: Enter to  Email Address textbox with value is 'curry3462@gmail.com'
+[2023-01-18 16:40:33,474] Login - Step 03: Enter to Password textbox with value is '123456'
+[2023-01-18 16:40:33,553] Login - Step 04: Click to Login button
+[2023-01-18 16:40:34,282] Login - Step 05: Verify login success mesage is displayed
+[2023-01-18 16:40:34,347] My_Account - Step 01: Navigate to 'My account' page
+[2023-01-18 16:40:34,713] My_Account - Step 02: Verify 'Cutomer Infor' page is displayed
+[2023-01-18 16:40:34,762] My_Account - Step 03: Verify 'First name' page is displayed
+[2023-01-18 16:40:34,824] My_Account - Step 04: Verify 'Last name' page is displayed
+[2023-01-18 16:40:34,887] My_Account - Step 05: Verify 'Email' page is displayed
+[2023-01-18 16:40:34,953] OS name = os.name
+[2023-01-18 16:40:34,953] Driver instance name = firefoxdriver: firefox on windows (42263c8e-02b0-4de0-a646-4c2c05346c7f)
