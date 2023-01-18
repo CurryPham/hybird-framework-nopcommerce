@@ -171,3 +171,15 @@
 [2023-01-17 23:05:38,979] Register - Step 04: Click to Login button
 [2023-01-17 23:05:39,743] Register - Step 05: Verify login success mesage is displayed
 [2023-01-17 23:05:39,800] Register - Step 06: Navigate to 'Customer infor page'
+[2023-01-18 12:02:26,520] Register - Step 01: Navigate to 'Home page'
+[2023-01-18 12:02:27,669] Register - Step 02: Enter to  Email Address textbox with value is 'curry6986@gmail.com'
+[2023-01-18 12:02:27,751] Register - Step 03: Enter to Password textbox with value is '123456'
+[2023-01-18 12:02:27,841] Register - Step 04: Cli ck to Login button
+[2023-01-18 12:02:28,657] Register - Step 05: Verify login success mesage is displayed
+[2023-01-18 12:05:15,989] Register - Step 01: Navigate to 'Home page'
+[2023-01-18 12:05:17,055] Register - Step 02: Enter to  Email Address textbox with value is 'curry3342@gmail.com'
+[2023-01-18 12:05:17,151] Register - Step 03: Enter to Password textbox with value is '123456'
+[2023-01-18 12:05:17,238] Register - Step 04: Cli ck to Login button
+[2023-01-18 13:03:24,967] Pre_Condition  - Step 01: Navigate to 'Home page'
+[2023-01-18 13:03:26,102] Pre_Condition - Step 02: Set Cookie and reload Page
+[2023-01-18 13:03:29,749] Pre_Condition - Step 03: Verify login success mesage is displayed

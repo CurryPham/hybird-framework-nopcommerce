@@ -1,0 +1,3 @@
+[2023-01-18 13:03:24,967] Pre_Condition  - Step 01: Navigate to 'Home page'
+[2023-01-18 13:03:26,102] Pre_Condition - Step 02: Set Cookie and reload Page
+[2023-01-18 13:03:29,749] Pre_Condition - Step 03: Verify login success mesage is displayed
