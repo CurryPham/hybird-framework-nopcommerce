@@ -25,6 +25,9 @@ public class Level_18_Pattern_Object extends BaseTest {
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
+		driver = getBrowserDriver(browserName);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+		showBrowserConsoleLogs(driver);
 
 		firstName = "curry";
 		lastName = "pham";
@@ -33,15 +36,13 @@ public class Level_18_Pattern_Object extends BaseTest {
 		day = "1";
 		month = "January";
 		year = "2000";
-
-		driver = getBrowserDriver(browserName);
-		homePage = PageGeneratorManager.getUserHomePage(driver);
 	}
 
 	@Test
 	public void User_01_Register() {
 		log.info("Register - Step 01: Navigate to 'Register page'");
 		registerPage = homePage.clickToRegister();
+		showBrowserConsoleLogs(driver);
 
 		registerPage.clickToRadioButtonByLabel(driver, "Female");
 
@@ -69,15 +70,17 @@ public class Level_18_Pattern_Object extends BaseTest {
 		log.info("Register - Step 07: Click to Register button");
 		registerPage.clickToButtonByText(driver, "Register");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
+		showBrowserConsoleLogs(driver);
 
 		log.info("Register - Step 08: Verify register success mesage is displayed");
-		verifyEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
+		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
 	}
 
 	@Test
 	public void User_02_Login() {
 		log.info("Login - Step 01: Navigate to 'Home page'");
 		loginPage = homePage.openLoginPage();
+		showBrowserConsoleLogs(driver);
 
 		log.info("Login - Step 02: Enter to  Email Address textbox with value is '" + emailAddress + "'");
 		loginPage.inputToTextboxByID(driver, "Email", emailAddress);
@@ -88,6 +91,7 @@ public class Level_18_Pattern_Object extends BaseTest {
 		log.info("Login - Step 04: Click to Login button");
 		loginPage.clickToButtonByText(driver, "Log in");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
+		showBrowserConsoleLogs(driver);
 
 		log.info("Login - Step 05: Verify login success mesage is displayed");
 		Assert.assertEquals(homePage.getSuccessLogin(), "My account");
@@ -97,6 +101,7 @@ public class Level_18_Pattern_Object extends BaseTest {
 	public void User_03_My_Account() {
 		log.info("My_Account - Step 01: Navigate to 'My account' page");
 		customerInforPage = homePage.clickToCustomerInfor();
+		showBrowserConsoleLogs(driver);
 
 		log.info("My_Account - Step 02: Verify 'Cutomer Infor' page is displayed");
 		Assert.assertEquals(customerInforPage.getSuccessLogin(), "My account");

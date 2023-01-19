@@ -56,7 +56,7 @@ public class Level_17_Custom_Close_Window extends BaseTest {
 		homePage = registerPage.clickToRegisterButton();
 
 		log.info("Pre_Condition - Step 08: Verify register success mesage is displayed");
-		verifyEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed..");
+		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed..");
 
 		log.info("Pre_Condition - Step 09: Navigate to 'Home page'");
 		loginPage = homePage.openLoginPage();

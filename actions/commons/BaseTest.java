@@ -2,6 +2,10 @@ package commons;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -13,6 +17,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
@@ -39,8 +46,26 @@ public class BaseTest {
 		if (browserList == BrowserList.FIREFOX) {
 			// WebDriverManager.firefoxdriver().driverVersion("").setup();
 			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		} else if (browserList == BrowserList.HEAD_FIREFOX) {
+
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.PROJECT_PATH + "\\browserLogs\\FirefoxLog.log");
+
+			// Add extention to Firefox
+			FirefoxProfile profile = new FirefoxProfile();
+			File translate = new File(GlobalConstants.PROJECT_PATH + "\\browserExtenstions\\to_google_translate-4.2.0.xpi");
+			profile.addExtension(translate);
+			profile.setAcceptUntrustedCertificates(true);
+			profile.setAssumeUntrustedCertificateIssuer(false);
+			FirefoxOptions options = new FirefoxOptions();
+			// options.addArguments("-private");
+			// options.addArguments("--disable_notifications");
+			// options.addArguments("--disable-geolocation");
+			// options.addArguments("intl.accept_languages", "vi-vn, vi, en-us, en");
+
+			options.setProfile(profile);
+			driver = new FirefoxDriver(options);
+
+		} else if (browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.chromedriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--headless");
@@ -48,8 +73,31 @@ public class BaseTest {
 			driver = new FirefoxDriver(options);
 		} else if (browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		} else if (browserList == BrowserList.HEAD_CHOME) {
+
+			// Add extention to Chrome
+			File file = new File(GlobalConstants.PROJECT_PATH + "\\browserExtenstions\\extension_2_0_12_0.crx");
+			ChromeOptions options = new ChromeOptions();
+			options.addExtensions(file);
+			// options.addArguments("--disable notifications");
+			// options.addArguments("--disable-geolocation");
+			// options.addArguments("--lang==vi");
+			Map<String, Object> prefs = new HashMap<String, Object>();
+
+			prefs.put("profile.default_content_settings.popups", 0);
+			prefs.put("download.default_directory", GlobalConstants.PROJECT_PATH + "\\downloadFiles");
+			prefs.put("credentials_enable_service", false);
+			prefs.put("profile.password_manager_enabled", false);
+
+			options.addArguments("--incognito");
+			options.setExperimentalOption("prefs", prefs);
+			options.setExperimentalOption("useAutomationExtension", false);
+			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+
+			System.setProperty("webdriver.chrome.args", "--disable-logging");
+			System.setProperty("webdriver.chrome.args", "--disable-logging");
+
+			driver = new ChromeDriver(options);
+		} else if (browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless");
@@ -70,20 +118,39 @@ public class BaseTest {
 
 	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+
 		if (browserList == BrowserList.FIREFOX) {
-			// WebDriverManager.firefoxdriver().driverVersion("").setup();
-			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		} else if (browserList == BrowserList.HEAD_FIREFOX) {
-			WebDriverManager.chromedriver().setup();
+			WebDriverManager.firefoxdriver().setup();
+			// System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+
+			// Add extention to Firefox
+			FirefoxProfile profile = new FirefoxProfile();
+			File translate = new File(GlobalConstants.PROJECT_PATH + "\\browserExtenstions\\to_google_translate-4.2.0.xpi");
+			profile.addExtension(translate);
+			profile.setAcceptUntrustedCertificates(true);
+			profile.setAssumeUntrustedCertificateIssuer(false);
+			FirefoxOptions options = new FirefoxOptions();
+			options.setProfile(profile);
+			driver = new FirefoxDriver(options);
+
+		} else if (browserList == BrowserList.H_FIREFOX) {
+			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--headless");
 			options.addArguments("window-size=1920x1080");
 			driver = new FirefoxDriver(options);
+
 		} else if (browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-		} else if (browserList == BrowserList.HEAD_CHOME) {
+
+			// Add extention to Chrome
+			File file = new File(GlobalConstants.PROJECT_PATH + "\\browserExtenstions\\extension_2_0_12_0.crx");
+			ChromeOptions options = new ChromeOptions();
+			options.addExtensions(file);
+			driver = new ChromeDriver(options);
+
+		} else if (browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless");
@@ -218,32 +285,44 @@ public class BaseTest {
 	protected void closeBrowserDriver() {
 		String cmd = null;
 		try {
-			String osName = GlobalConstants.OS_NAME;
+			String osName = System.getProperty("os.name").toLowerCase();
 			log.info("OS name = " + osName);
 
 			String driverInstanceName = driver.toString().toLowerCase();
 			log.info("Driver instance name = " + driverInstanceName);
 
-			String browserDriverName = null;
-
 			if (driverInstanceName.contains("chrome")) {
-				browserDriverName = "chromedriver";
+				if (osName.contains("window")) {
+					cmd = "taskkill /F   /FI \"IMAGENAME eq chromedriver*\"";
+				} else {
+					cmd = "pkill chromedriver";
+				}
 			} else if (driverInstanceName.contains("internetexplorer")) {
-				browserDriverName = "IEDriverServer";
+				if (osName.contains("window")) {
+					cmd = "taskkill /F   /FI \"IMAGENAME eq IEDriverSever*\"";
+				}
 			} else if (driverInstanceName.contains("firefox")) {
-				browserDriverName = "geckodriver";
+				if (osName.contains("window")) {
+					cmd = "taskkill /F   /FI \"IMAGENAME eq geckodriver*\"";
+				} else {
+					cmd = "pkill geckodriver";
+				}
 			} else if (driverInstanceName.contains("edge")) {
-				browserDriverName = "msedgedriver";
+				if (osName.contains("window")) {
+					cmd = "taskkill /F   /FI \"IMAGENAME eq msededriver*\"";
+				} else {
+					cmd = "pkill msededriver";
+				}
 			} else if (driverInstanceName.contains("opera")) {
-				browserDriverName = "operadriver";
-			} else {
-				browserDriverName = "safaridriver";
-			}
-
-			if (osName.contains("window")) {
-				cmd = "taskkill /F /FI \"IMAGENAME eq " + browserDriverName + "*\"";
-			} else {
-				cmd = "pkill " + browserDriverName;
+				if (osName.contains("window")) {
+					cmd = "taskkill /F   /FI \"IMAGENAME eq operadriver*\"";
+				} else {
+					cmd = "pkill operadriver";
+				}
+			} else if (driverInstanceName.contains("safari")) {
+				if (osName.contains("mac")) {
+					cmd = "pkill safaridriver";
+				}
 			}
 
 			if (driver != null) {
@@ -261,6 +340,19 @@ public class BaseTest {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+		}
+	}
+
+	protected void showBrowserConsoleLogs(WebDriver driver) {
+		if (driver.toString().contains("chrome") || driver.toString().contains("edge")) {
+			LogEntries logs = driver.manage().logs().get("browser");
+			List<LogEntry> logList = logs.getAll();
+			for (LogEntry logging : logList) {
+				if (logging.getLevel().toString().toLowerCase().contains("error")) {
+					log.info("----------------" + logging.getLevel().toString() + "----------------------\n" + logging.getMessage());
+				}
+			}
+
 		}
 	}
 }
