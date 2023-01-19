@@ -120,17 +120,18 @@ public class BaseTest {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 
 		if (browserList == BrowserList.FIREFOX) {
-			WebDriverManager.firefoxdriver().setup();
-			// System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+			// WebDriverManager.firefoxdriver().setup();
+			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 
 			// Add extention to Firefox
-			FirefoxProfile profile = new FirefoxProfile();
-			File translate = new File(GlobalConstants.PROJECT_PATH + "\\browserExtenstions\\to_google_translate-4.2.0.xpi");
-			profile.addExtension(translate);
-			profile.setAcceptUntrustedCertificates(true);
-			profile.setAssumeUntrustedCertificateIssuer(false);
+			// FirefoxProfile profile = new FirefoxProfile();
+			// File translate = new File(GlobalConstants.PROJECT_PATH + "\\browserExtenstions\\to_google_translate-4.2.0.xpi");
+			// profile.addExtension(translate);
+			// profile.setAcceptUntrustedCertificates(true);
+			// profile.setAssumeUntrustedCertificateIssuer(false);
 			FirefoxOptions options = new FirefoxOptions();
-			options.setProfile(profile);
+			// options.setProfile(profile);
+			options.setAcceptInsecureCerts(false);
 			driver = new FirefoxDriver(options);
 
 		} else if (browserList == BrowserList.H_FIREFOX) {
