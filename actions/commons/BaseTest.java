@@ -48,11 +48,13 @@ public class BaseTest {
 			System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 
 			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.PROJECT_PATH + "\\browserLogs\\FirefoxLog.log");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,
+					GlobalConstants.PROJECT_PATH + "\\browserLogs\\FirefoxLog.log");
 
 			// Add extention to Firefox
 			FirefoxProfile profile = new FirefoxProfile();
-			File translate = new File(GlobalConstants.PROJECT_PATH + "\\browserExtenstions\\to_google_translate-4.2.0.xpi");
+			File translate = new File(
+					GlobalConstants.PROJECT_PATH + "\\browserExtenstions\\to_google_translate-4.2.0.xpi");
 			profile.addExtension(translate);
 			profile.setAcceptUntrustedCertificates(true);
 			profile.setAssumeUntrustedCertificateIssuer(false);
@@ -125,7 +127,8 @@ public class BaseTest {
 
 			// Add extention to Firefox
 			// FirefoxProfile profile = new FirefoxProfile();
-			// File translate = new File(GlobalConstants.PROJECT_PATH + "\\browserExtenstions\\to_google_translate-4.2.0.xpi");
+			// File translate = new File(GlobalConstants.PROJECT_PATH +
+			// "\\browserExtenstions\\to_google_translate-4.2.0.xpi");
 			// profile.addExtension(translate);
 			// profile.setAcceptUntrustedCertificates(true);
 			// profile.setAssumeUntrustedCertificateIssuer(false);
@@ -187,19 +190,25 @@ public class BaseTest {
 		return url;
 	}
 
-	private String getEnviromentValue(String severName) {
+	private String getEnviromentValue(String enviromentName) {
 		String envUrl = null;
-		EnviromentList enviroment = EnviromentList.valueOf(severName.toUpperCase());
-		if (enviroment == EnviromentList.DEV) {
+		EnviromentList enviroment = EnviromentList.valueOf(enviromentName.toUpperCase());
+		switch (enviroment) {
+		case DEV:
 			envUrl = "https://demo.nopcommerce.com/";
-		} else if (enviroment == EnviromentList.TESTING) {
-			envUrl = "https://admin-demo.nopcommerce.com";
-
-		} else if (enviroment == EnviromentList.STAGING) {
-			envUrl = "https://staging..nopcommerce.com";
-
-		} else if (enviroment == EnviromentList.PRODUCTION) {
+			break;
+		case TESTING:
+			envUrl = "https://testing..nopcommerce.com";
+			break;
+		case STAGING:
+			envUrl = "https://staging.nopcommerce.com";
+			break;
+		case PRODUCTION:
 			envUrl = "https://production.nopcommerce.com";
+			break;
+		default:
+			envUrl = null;
+			break;
 		}
 		return envUrl;
 	}
@@ -350,7 +359,8 @@ public class BaseTest {
 			List<LogEntry> logList = logs.getAll();
 			for (LogEntry logging : logList) {
 				if (logging.getLevel().toString().toLowerCase().contains("error")) {
-					log.info("----------------" + logging.getLevel().toString() + "----------------------\n" + logging.getMessage());
+					log.info("----------------" + logging.getLevel().toString() + "----------------------\n"
+							+ logging.getMessage());
 				}
 			}
 

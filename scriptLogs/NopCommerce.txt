@@ -1,20 +1,20 @@
-[2023-01-19 17:01:52,787] Register - Step 01: Navigate to 'Register page'
-[2023-01-19 17:01:54,134] Register - Step 02: Enter to First Name textbox with value is 'Jerrold'
-[2023-01-19 17:01:54,222] Register - Step 03: Enter to Last name textbox with value is 'Beahan'
-[2023-01-19 17:01:55,256] Register - Step 04: Enter to Email Address textbox with value is 'meri.nienow@gmail.com'
-[2023-01-19 17:01:55,419] Register - Step 05: Enter to Password textbox with value is '123456'
-[2023-01-19 17:01:55,510] Register - Step 06: Enter to Confirm Password textbox with value is '123456'
-[2023-01-19 17:01:55,589] Register - Step 07: Click to Register button
-[2023-01-19 17:01:56,323] Register - Step 08: Verify register success mesage is displayed
-[2023-01-19 17:01:56,428] Login - Step 01: Navigate to 'Home page'
-[2023-01-19 17:01:56,807] Login - Step 02: Enter to  Email Address textbox with value is 'meri.nienow@gmail.com'
-[2023-01-19 17:01:56,892] Login - Step 03: Enter to Password textbox with value is '123456'
-[2023-01-19 17:01:56,982] Login - Step 04: Click to Login button
-[2023-01-19 17:01:57,660] Login - Step 05: Verify login success mesage is displayed
-[2023-01-19 17:01:57,708] My_Account - Step 01: Navigate to 'My account' page
-[2023-01-19 17:01:58,070] My_Account - Step 02: Verify 'Cutomer Infor' page is displayed
-[2023-01-19 17:01:58,118] My_Account - Step 03: Verify 'First name' page is displayed
-[2023-01-19 17:01:58,176] My_Account - Step 04: Verify 'Last name' page is displayed
-[2023-01-19 17:01:58,240] My_Account - Step 05: Verify 'Email' page is displayed
-[2023-01-19 17:01:58,306] OS name = windows 10
-[2023-01-19 17:01:58,306] Driver instance name = firefoxdriver: firefox on windows (535667e8-9aa2-41dd-9936-e051af2d0aa6)
+[2023-01-20 08:31:50,543] Register - Step 01: Navigate to 'Register page'
+[2023-01-20 08:31:52,006] Register - Step 02: Enter to First Name textbox with value is 'Mai'
+[2023-01-20 08:31:52,105] Register - Step 03: Enter to Last name textbox with value is 'Volkman'
+[2023-01-20 08:31:53,241] Register - Step 04: Enter to Email Address textbox with value is 'alexander.okon@gmail.com'
+[2023-01-20 08:31:53,424] Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-01-20 08:31:53,549] Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-01-20 08:31:53,628] Register - Step 07: Click to Register button
+[2023-01-20 08:31:54,418] Register - Step 08: Verify register success mesage is displayed
+[2023-01-20 08:31:54,546] Login - Step 01: Navigate to 'Home page'
+[2023-01-20 08:31:54,958] Login - Step 02: Enter to  Email Address textbox with value is 'alexander.okon@gmail.com'
+[2023-01-20 08:31:55,066] Login - Step 03: Enter to Password textbox with value is '123456'
+[2023-01-20 08:31:55,148] Login - Step 04: Click to Login button
+[2023-01-20 08:31:55,896] Login - Step 05: Verify login success mesage is displayed
+[2023-01-20 08:31:55,984] My_Account - Step 01: Navigate to 'My account' page
+[2023-01-20 08:31:56,376] My_Account - Step 02: Verify 'Cutomer Infor' page is displayed
+[2023-01-20 08:31:56,451] My_Account - Step 03: Verify 'First name' page is displayed
+[2023-01-20 08:31:56,532] My_Account - Step 04: Verify 'Last name' page is displayed
+[2023-01-20 08:31:56,618] My_Account - Step 05: Verify 'Email' page is displayed
+[2023-01-20 08:31:56,691] OS name = windows 11
+[2023-01-20 08:31:56,691] Driver instance name = firefoxdriver: firefox on windows (33408ae0-ef8e-434f-88b0-3207386518c2)
